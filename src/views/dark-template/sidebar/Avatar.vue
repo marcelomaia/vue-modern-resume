@@ -6,7 +6,7 @@
     >
       <img
         :src="publicPath('/img/avatar.jpg')"
-        alt="Amirrea Nasiri"
+        alt="Marcelo Maia"
       >
     </v-avatar>
   </div>

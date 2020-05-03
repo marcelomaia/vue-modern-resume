@@ -7,10 +7,10 @@
       <avatar />
       <div class="text-sm-center mb-4 mt-3">
         <h1>
-          Amirreza <span class="light-blue--text text--lighten-3">Nasiri</span>
+          Marcelo <span class="light-blue--text text--lighten-3">Maia</span>
         </h1>
         <span>
-          A challenge-loving web developer
+          Fullstack Developer
         </span>
       </div>
 
@@ -79,47 +79,47 @@ export default {
             {
               name: 'Email',
               icon: 'mdi-email',
-              text: 'hi@amirreza.in',
+              text: 'contato@marcelomaia.tech',
             },
             {
               name: 'Website',
               icon: 'mdi-web',
-              text: 'amirreza.in',
+              text: 'marcelomaia.tech',
             },
             {
-              name: 'Birth Date',
-              icon: 'mdi-cake-variant',
-              text: 'Dec 7, 1996',
+              name: 'Whatsapp',
+              icon: 'mdi-whatsapp',
+              text: '+55 11 9 3431-5432',
             },
             {
-              name: 'Habitation',
+              name: 'Habitação',
               icon: 'mdi-map-marker',
-              text: 'Tabriz, Iran',
+              text: 'São Paulo, Brasil',
             },
           ],
         },
         socials: {
-          title: 'SOCIALS',
+          title: 'SOCIAL',
           items: [
             {
               icon: 'mdi-github-circle',
-              text: 'github.com/AmirrezaNasiri',
-              link: 'https://github.com/AmirrezaNasiri',
+              text: 'github.com/marcelomaia',
+              link: 'https://github.com/marcelomaia',
             },
             {
               icon: 'mdi-linkedin-box',
-              text: 'linkedin.com/in/amirreza-nasiri',
-              link: 'https://linkedin.com/in/amirreza-nasiri',
-            },
-            {
-              icon: 'mdi-twitter',
-              text: 'twitter.com/Amirreza_Nasiri',
-              link: 'https://twitter.com/Amirreza_Nasiri',
+              text: 'linkedin.com/in/marcelomaia2',
+              link: 'https://linkedin.com/in/marcelomaia2',
             },
             {
               icon: 'mdi-instagram',
-              text: 'instagram.com/amirreza.n96',
-              link: 'https://instagram.com/amirreza.n96',
+              text: 'instagram.com/marcelomaiaa2',
+              link: 'https://instagram.com/marcelomaiaa2',
+            },
+            {
+              icon: 'mdi-telegram',
+              text: 't.me/marcelomaiaa',
+              link: 'https://t.me/marcelomaiaa',
             },
           ],
         },
@@ -129,67 +129,51 @@ export default {
 
             {
               icon: 'mdi-bullseye',
-              text: 'Getting out of Safe Zone',
-            },
-            {
-              icon: 'mdi-biohazard',
-              text: 'Challenges',
+              text: 'Aprender constantemente',
             },
             {
               icon: 'mdi-bike',
-              text: 'Cycling',
+              text: 'Ciclismo',
             },
             {
               icon: 'mdi-image-filter-hdr',
-              text: 'Nature',
-            },
-            {
-              icon: 'mdi-auto-fix',
-              text: 'Hacking Stuffs',
+              text: 'Natureza',
             },
             {
               icon: 'mdi-teach',
-              text: 'Teaching',
+              text: 'Ensinar',
             },
             {
               icon: 'mdi-karate',
-              text: 'Sports',
+              text: 'Exercícios',
             },
             {
               icon: 'mdi-music',
-              text: 'Music',
+              text: 'Música',
             },
             {
               icon: 'mdi-account-group',
-              text: 'Leadership',
+              text: 'Liderança',
             },
             {
               icon: 'mdi-book-open-page-variant',
-              text: 'Books',
+              text: 'Leitura',
             },
             {
-              icon: 'mdi-android-debug-bridge',
-              text: 'Tickling Bugs!',
+              icon: 'mdi-cookie',
+              text: 'Cozinhar',
             },
           ],
         },
         languages: {
-          title: 'LANGUAGES',
+          title: 'LÍNGUAS',
           items: [
             {
-              text : 'English',
-              value: 70,
+              text : 'Inglês',
+              value: 80,
             },
             {
-              text : 'Turkish',
-              value: 45,
-            },
-            {
-              text : 'Azeri',
-              value: 100,
-            },
-            {
-              text : 'Persian',
+              text : 'Português',
               value: 100,
             },
           ],
