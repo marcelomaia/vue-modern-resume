@@ -5,7 +5,7 @@
   >
     <v-card-title>
       <h3 class="title font-weight-light mb-1">
-        {{ title }}
+        {{ $t(title) }}
       </h3>
       <v-spacer />
       <slot name="actions" />
@@ -20,7 +20,7 @@
   >
     <div class="title mb-3">
       <h2>
-        {{ title }}
+        {{ $t(title) }}
       </h2>
       <template v-if="$slots.actions">
         <v-spacer />

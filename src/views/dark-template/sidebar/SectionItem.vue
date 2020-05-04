@@ -13,7 +13,7 @@
       :xs12="!hasIcon"
     >
       <div>
-        {{ item.name }}
+        {{ $t(item.name) }}
       </div>
       <p>
         <a
@@ -22,13 +22,13 @@
           :href="item.link"
           target="_blank"
         >
-          {{ item.text }}
+          {{ $t(item.text) }}
         </a>
         <span
           v-else
           class="grey--text"
         >
-          {{ item.text }}
+          {{ $t(item.text) }}
         </span>
       </p>
     </v-flex>

@@ -24,7 +24,7 @@
                 {{ item.icon }}
               </v-icon>
             </v-avatar>
-            {{ item.text }}
+            {{ $t(item.text) }}
           </v-chip>
         </template>
       </sidebar-section>
@@ -46,13 +46,13 @@
                 >
                   <v-progress-circular
                     rotate="360"
-                    size="65"
+                    size="70"
                     width="2"
                     :value="item.value"
                     color="white"
                     class="ma-2"
                   >
-                    {{ item.text }}
+                    {{ $t(item.text) }}
                   </v-progress-circular>
                 </v-flex>
               </template>
@@ -79,7 +79,7 @@ export default {
             {
               name: 'Email',
               icon: 'mdi-email',
-              text: 'contato@marcelomaia.tech',
+              text: 'contato.email',
             },
             {
               name: 'Website',
@@ -92,7 +92,7 @@ export default {
               text: '+55 11 9 3431-5432',
             },
             {
-              name: 'Habitação',
+              name: 'contato.habitacao',
               icon: 'mdi-map-marker',
               text: 'São Paulo, Brasil',
             },
@@ -126,42 +126,41 @@ export default {
         hobbies: {
           title: 'HOBBIES',
           items: [
-
             {
               icon: 'mdi-bullseye',
-              text: 'Aprender constantemente',
+              text: 'hobbies.aprender',
             },
             {
               icon: 'mdi-bike',
-              text: 'Ciclismo',
+              text: 'hobbies.ciclismo',
             },
             {
               icon: 'mdi-image-filter-hdr',
-              text: 'Natureza',
+              text: 'hobbies.natureza',
             },
             {
               icon: 'mdi-teach',
-              text: 'Ensinar',
+              text: 'hobbies.ensinar',
             },
             {
               icon: 'mdi-karate',
-              text: 'Exercícios',
+              text: 'hobbies.exercicios',
             },
             {
               icon: 'mdi-music',
-              text: 'Música',
+              text: 'hobbies.musica',
             },
             {
               icon: 'mdi-account-group',
-              text: 'Liderança',
+              text: 'hobbies.lideranca',
             },
             {
               icon: 'mdi-book-open-page-variant',
-              text: 'Leitura',
+              text: 'hobbies.leitura',
             },
             {
               icon: 'mdi-cookie',
-              text: 'Cozinhar',
+              text: 'hobbies.cozinhar',
             },
           ],
         },
@@ -169,11 +168,11 @@ export default {
           title: 'LÍNGUAS',
           items: [
             {
-              text : 'Inglês',
+              text : 'linguas.ingles',
               value: 80,
             },
             {
-              text : 'Português',
+              text : 'linguas.portugues',
               value: 100,
             },
           ],
