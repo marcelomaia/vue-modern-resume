@@ -4,32 +4,18 @@
       <content-section :title="$t('principal.titulo')">
         {{ $t("principal.descricao") }}
       </content-section>
-      <content-section v-if="prouds" title="What am I proud of?">
-        <v-layout v-for="(proud, i) in prouds" :key="i">
-          <v-flex md1 xs3>
-            <v-icon right>
-              {{ proud.icon }}
-            </v-icon>
-          </v-flex>
-          <v-flex md11 xs9>
-            <p>
-              <strong>{{ proud.text }}</strong
-              ><br />
-              <small>{{ proud.source }}</small>
-            </p>
-          </v-flex>
-        </v-layout>
-      </content-section>
       <content-section v-if="educations" :title="$t('educacao.titulo')">
         <v-layout v-for="(education, i) in educations" :key="i">
-          <v-flex md4> {{ education.from }} - {{ education.to }} </v-flex>
+          <v-flex md4>
+            {{ $t(education.from) }} - {{ $t(education.to) }}
+          </v-flex>
           <v-flex md8>
-            <strong v-if="education.title">{{ education.title }}</strong>
+            <strong v-if="education.title">{{ $t(education.title) }}</strong>
             <div v-if="education.location">
-              <i>{{ education.location }}</i>
+              <i>{{ $t(education.location) }}</i>
             </div>
             <div v-if="education.description">
-              {{ education.description }}
+              {{ $t(education.description) }}
             </div>
           </v-flex>
         </v-layout>
@@ -45,7 +31,7 @@
             <v-flex v-else :key="i" md6 xs12>
               <div class="mr-2 ml-2">
                 <div v-if="skill.custom" class="align-center">
-                  <span class="iconify" :data-icon="skill.icon"/>
+                  <span class="iconify" :data-icon="skill.icon" />
                   {{ skill.title }}
                 </div>
                 <div v-else class="align-center">
@@ -74,38 +60,24 @@ import ContentSection from "@/views/dark-template/content/Section";
 export default {
   name: "MainContent",
   components: { ContentSection },
+  mounted(){
+    this.$i18n.locale = 'ptBr'
+  },
   data: () => ({
-    prouds: [
-      {
-        icon: "mdi-help-rhombus-outline",
-        text: "Answered 10M+ questions!",
-        source: "(Bytegate.ir post views)",
-      },
-      {
-        icon: "mdi-library-music",
-        text:
-          "Made people enjoy and learn a new language for equivalent of 29+ years (older than myself!)",
-        source: "(Bobet.ir and its channel downloads)",
-      },
-      {
-        icon: "mdi-timer-sand",
-        text: "Saved +110 days of time of students, writers and etc!",
-        source: "(Delix.ir service usages)",
-      },
-      {
-        icon: "mdi-account-multiple",
-        text: "Tried to cover small part of 7 people expenses.",
-        source: "(My awesome colleagues)",
-      },
-    ],
     educations: [
       {
-        from: "2009",
-        to: "2014",
-        title: "Bachelor's degree, Information Technology",
-        location: "Seraj University",
-        description:
-          "Became a member of University Academic Association of Computer Science",
+        from: "educacao.1.inicio",
+        to: "educacao.1.fim",
+        title: "educacao.1.titulo",
+        location: "educacao.1.lugar",
+        description: "educacao.1.descricao",
+      },
+      {
+        from: "educacao.2.inicio",
+        to: "educacao.2.fim",
+        title: "educacao.2.titulo",
+        location: "educacao.2.lugar",
+        description: "educacao.2.descricao",
       },
     ],
     skills: [
@@ -120,86 +92,64 @@ export default {
         value: 90,
       },
       {
-        title: "HTML",
-        icon: "mdi-language-html5",
-        value: 100,
-      },
-      {
-        title: "Postgres",
-        icon: "cib:postgresql",
-        custom: true,
-        value: 100,
-      },
-      {
-        title: "MongoDB",
-        icon: "cib:mongodb",
-        custom: true,
-        value: 100,
-      },
-      {
-        title: "Redis",
-        icon: "cib:redis",
-        custom: true,
-        value: 100,
-      },
-      {
-        title: "Nginx",
-        icon: "cib:nginx",
-        custom: true,
-        value: 100,
-      },
-      {
-        title: "Sentry",
-        icon: "cib:sentry",
-        custom: true,
-        value: 100,
-      },
-      {
-        title: "CSS",
-        icon: "mdi-language-css3",
-        value: 100,
-      },
-      {
         title: "DART",
         icon: "simple-icons:dart",
         custom: true,
-        value: 100
+        value: 70,
       },
-      //TODO: colocar icone django
+      {
+        title: "Flutter",
+        icon: "cib:flutter",
+        custom: true,
+        value: 60,
+      },
       {
         title: "Django",
         icon: "cib:django",
         custom: true,
-        value:100
+        value: 95,
       },
       {
         title: "Django Rest Framework",
         icon: "cib:django",
         custom: true,
-        value:100
-      },
-      {
-        title: "Pytest",
-        icon: "mdi-test-tube",
-        custom: true,
-        value: 100
-      },
-      {
-        title: "Jest",
-        icon: "cib:jest",
-        custom: true,
+        value: 95,
       },
       {
         title: "Flask",
         icon: "cib:flask",
         value: 90,
-        custom:true
+        custom: true,
       },
+      {
+        title: "Pytest",
+        icon: "mdi-test-tube",
+        custom: true,
+        value: 95,
+      },
+
+      {
+        title: "Jest",
+        icon: "cib:jest",
+        custom: true,
+        value: 80,
+      },
+      {
+        title: "Vue.js",
+        icon: "mdi-vuejs",
+        value: 90,
+      },
+      {
+        title: "React.js",
+        icon: "mdi-react",
+        value: 80,
+      },
+
       {
         title: "Material Design",
         icon: "simple-icons:material-ui",
         value: 90,
-        custom:true
+        custom: true,
       },
       {
         title: "Bootstrap 4",
@@ -207,42 +157,61 @@ export default {
         value: 90,
       },
       {
-        title: "Vue.js",
-        icon: "mdi-vuejs",
-        value: 80,
+        title: "HTML",
+        icon: "mdi-language-html5",
+        value: 100,
       },
       {
-        title: "React.js",
-        icon: "mdi-react",
-        value: 80,
+        title: "CSS",
+        icon: "mdi-language-css3",
+        value: 88,
       },
+
       {
-        title: "Flutter",
-        icon: "cib:flutter",
+        title: "Postgres",
+        icon: "cib:postgresql",
         custom: true,
+        value: 90,
       },
-      { divider: true },
+      {
+        title: "MongoDB",
+        icon: "cib:mongodb",
+        custom: true,
+        value: 80,
+      },
+      {
+        title: "Redis",
+        icon: "cib:redis",
+        custom: true,
+        value: 90,
+      },
+      {
+        title: "Nginx",
+        icon: "cib:nginx",
+        custom: true,
+        value: 60,
+      },
       {
         title: "Linux",
         icon: "mdi-linux",
-        value: 70,
+        value: 95,
       },
       {
         title: "Docker",
         icon: "mdi-docker",
-        value: 70,
+        value: 95,
       },
       {
         title: "Extreme Programming",
         icon: "cryptocurrency:xp",
-        value: 70,
-        custom: true
+        value: 90,
+        custom: true,
       },
       {
         title: "Domain Driven Design",
         icon: "whh:business",
-        value: 70,
-        custom: true
+        value: 90,
+        custom: true,
       },
       {
         title: "Web Application Security",
@@ -257,24 +226,12 @@ export default {
       {
         title: "Continuous Integration / Continuous Delivery",
         icon: "mdi-truck-fast",
-        value: 35,
+        value: 90,
       },
       {
         title: "Git",
         icon: "mdi-git",
         value: 90,
-      },
-      { divider: true },
-      {
-        title: "Hardware Development",
-        icon: "mdi-chip",
-        value: 29,
-      },
-      { divider: true },
-      {
-        title: "Leadership",
-        icon: "mdi-account-group",
-        value: 68,
       },
     ],
   }),
@@ -289,7 +246,7 @@ export default {
 .progress {
   margin-top: 0.1rem;
 }
-.iconify{
-  color:#777777
+.iconify {
+  color: #777777;
 }
 </style>

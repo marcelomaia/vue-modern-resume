@@ -1,7 +1,7 @@
 <template>
   <div class="mb-4">
     <div class="title mb-3">
-      {{ options.title }}
+      {{ options.title}}
     </div>
     <slot v-if="$slots.default" />
     <template v-else-if="$scopedSlots.items">
