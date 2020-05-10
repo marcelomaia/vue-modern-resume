@@ -24,6 +24,7 @@ const messages = {
   },
   habilidades: {
     titulo: "Skills",
+    descricao: "(% are relative not absolute)"
   },
   educacao: {
     titulo: "Education",

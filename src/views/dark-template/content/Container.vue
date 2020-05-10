@@ -25,6 +25,9 @@
         id="to-timeline"
         :title="$t('habilidades.titulo')"
       >
+        <template slot="actions">
+          {{ $t("habilidades.descricao") }}
+        </template>
         <v-layout wrap>
           <template v-for="(skill, i) in skills">
             <v-flex v-if="skill.divider" :key="i" md12 xs12 mb-4 />
@@ -60,8 +63,8 @@ import ContentSection from "@/views/dark-template/content/Section";
 export default {
   name: "MainContent",
   components: { ContentSection },
-  mounted(){
-    this.$i18n.locale = 'ptBr'
+  mounted() {
+    this.$i18n.locale = "ptBr";
   },
   data: () => ({
     educations: [
@@ -84,12 +87,12 @@ export default {
       {
         title: "Python",
         icon: "mdi-language-python",
-        value: 95,
+        value: 100,
       },
       {
         title: "JavaScript",
         icon: "mdi-language-javascript",
-        value: 90,
+        value: 93,
       },
       {
         title: "DART",
@@ -107,25 +110,25 @@ export default {
         title: "Django",
         icon: "cib:django",
         custom: true,
-        value: 95,
+        value: 99,
       },
       {
         title: "Django Rest Framework",
         icon: "cib:django",
         custom: true,
-        value: 95,
+        value: 99,
       },
       {
         title: "Flask",
         icon: "cib:flask",
-        value: 90,
+        value: 95,
         custom: true,
       },
       {
         title: "Pytest",
         icon: "mdi-test-tube",
         custom: true,
-        value: 95,
+        value: 100,
       },
 
       {
@@ -137,12 +140,18 @@ export default {
       {
         title: "Vue.js",
         icon: "mdi-vuejs",
-        value: 90,
+        value: 95,
+      },
+      {
+        title: "Cypress",
+        icon: "logos-cypress",
+        value: 87,
+        custom: true
       },
       {
         title: "React.js",
         icon: "mdi-react",
-        value: 80,
+        value: 90,
       },
 
       {
@@ -194,7 +203,7 @@ export default {
       {
         title: "Linux",
         icon: "mdi-linux",
-        value: 95,
+        value: 100,
       },
       {
         title: "Docker",
@@ -221,7 +230,12 @@ export default {
       {
         title: "Test Driven Development",
         icon: "mdi-test-tube",
-        value: 95,
+        value: 100,
+      },
+      {
+        title: "Behavior Driven Development",
+        icon: "mdi-test-tube",
+        value: 85,
       },
       {
         title: "Continuous Integration / Continuous Delivery",
@@ -231,7 +245,7 @@ export default {
       {
         title: "Git",
         icon: "mdi-git",
-        value: 90,
+        value: 95,
       },
     ],
   }),

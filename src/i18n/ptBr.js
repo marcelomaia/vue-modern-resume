@@ -27,6 +27,7 @@ const messages = {
   },
   habilidades: {
     titulo: "Habilidades",
+    descricao: "(% são relativas, não absolutas)",
   },
   educacao: {
     titulo: "Educação",
@@ -84,8 +85,7 @@ const messages = {
     4: {
       ano: "2016-18",
       titulo: "De volta à EBI Informática",
-      html:
-        `<p>Empresa onde atuou a maior parte do tempo, como principal atividade mantinha um fork do STOQ que &eacute; um ERP Livre de alta qualidade. Foi neste que aprendeu boas pr&aacute;ticas de desenvolvimento como SOLID, Padr&otilde;es de Projeto, TDD, DDD. O Fork era bem completo, atendia v&aacute;rias demandas t&iacute;picas de um ERP como caixa, contas a pagar e receber, estoque, boletos, hardwares diversificados, aplicativo para android, emiss&otilde;es fiscais e muito mais. O sistema era mantido por somente 2 desenvolvedores e possu&iacute;a v&aacute;rios clientes ativos, por isso a qualidade do software era fundamental para conseguir atender diferentes demandas internas e externas. Muitas vezes se tinha contato com o cliente final e foi necess&aacute;rio desenvolver a capacidade de explicar o trabalho para leigos e negociar demandas e interesses conflitantes. Tamb&eacute;m ajudava a manter um totem de vendas de ingresso.</p>
+      html: `<p>Empresa onde atuou a maior parte do tempo, como principal atividade mantinha um fork do STOQ que &eacute; um ERP Livre de alta qualidade. Foi neste que aprendeu boas pr&aacute;ticas de desenvolvimento como SOLID, Padr&otilde;es de Projeto, TDD, DDD. O Fork era bem completo, atendia v&aacute;rias demandas t&iacute;picas de um ERP como caixa, contas a pagar e receber, estoque, boletos, hardwares diversificados, aplicativo para android, emiss&otilde;es fiscais e muito mais. O sistema era mantido por somente 2 desenvolvedores e possu&iacute;a v&aacute;rios clientes ativos, por isso a qualidade do software era fundamental para conseguir atender diferentes demandas internas e externas. Muitas vezes se tinha contato com o cliente final e foi necess&aacute;rio desenvolver a capacidade de explicar o trabalho para leigos e negociar demandas e interesses conflitantes. Tamb&eacute;m ajudava a manter um totem de vendas de ingresso.</p>
         <p><strong>Principais tecnologias usadas:</strong></p>
         <ul>
         <li>Python, Flask, SQLObject, ReportLab, Py2exe, Glade, KIWI-GTK, Pytest.</li>
@@ -96,21 +96,19 @@ const messages = {
     5: {
       ano: "2018-20",
       titulo: "Mudança para SP e Para AMCOM.",
-      html:
-        `<p>Trabalhou na AMCOM por um ano e meio, onde estava alocado na prefeitura de S&atilde;o Paulo. Respons&aacute;vel pela cria&ccedil;&atilde;o de sistemas sob demanda, desde a concep&ccedil;&atilde;o da id&eacute;ia at&eacute; a entrega do produto, e tamb&eacute;m na manuten&ccedil;&atilde;o de sistemas legado. Atuou principalmente no <a href="https://github.com/prefeiturasp/SME-Terceirizadas/tree/development">SIGPAE (Backend)</a> e <a href="https://github.com/prefeiturasp/SME-Terceirizadas-Frontend/tree/development">SIGPAE (Frontend)</a> que &eacute; um sistema de gest&atilde;o de alimenta&ccedil;&atilde;o escolar para atender mais de 4 mil escolas, facilitando um fluxo completo de solicita&ccedil;&otilde;es de alimenta&ccedil;&atilde;o entre as escolas e entidades respons&aacute;veis. Conseguiu difundir a cultura de TDD e XP para seus colegas de trabalho, melhorando assim a qualidade do c&oacute;digo.</p>
+      html: `<p>Trabalhou na AMCOM por um ano e meio, onde estava alocado na prefeitura de S&atilde;o Paulo. Respons&aacute;vel pela cria&ccedil;&atilde;o de sistemas sob demanda, desde a concep&ccedil;&atilde;o da id&eacute;ia at&eacute; a entrega do produto, e tamb&eacute;m na manuten&ccedil;&atilde;o de sistemas legado. Atuou principalmente no <a href="https://github.com/prefeiturasp/SME-Terceirizadas/tree/development">SIGPAE (Backend)</a> e <a href="https://github.com/prefeiturasp/SME-Terceirizadas-Frontend/tree/development">SIGPAE (Frontend)</a> que &eacute; um sistema de gest&atilde;o de alimenta&ccedil;&atilde;o escolar para atender mais de 4 mil escolas, facilitando um fluxo completo de solicita&ccedil;&otilde;es de alimenta&ccedil;&atilde;o entre as escolas e entidades respons&aacute;veis. Conseguiu difundir a cultura de TDD e XP para seus colegas de trabalho, melhorando assim a qualidade do c&oacute;digo.</p>
         <p><strong>Principais tecnologias usadas:</strong></p>
         <ul>
         <li>Python, Django, Django REST Framework, Pytest, Weasyprint.</li>
         <li>ReactJS, Redux, Redux-Form, Jest, Enzyme, Bootstrap4, SASS, HTML, CSS e JS.</li>
         <li>Postgres, Redis, MongoDB.</li>
         <li>Docker, Sentry, NGNINX, Travis-CI.</li>
-        </ul>`
+        </ul>`,
     },
     6: {
       ano: "Até agora...",
       titulo: "Novo desafio na TIVIT.",
-      html:
-        `
+      html: `
         <div>Atualmente &eacute; lideran&ccedil;a t&eacute;cnica e trabalha na metodologia Design Thinking, junto &agrave; uma equipe multi-disciplinar.</div>
         <div>&nbsp;</div>
         <div><strong>Principais tecnologias usadas:</strong>
@@ -124,7 +122,7 @@ const messages = {
         </div>`,
     },
   },
-  linguagem: 'Escolha seu idioma'
+  linguagem: "Escolha seu idioma",
 };
 
 export default messages;
