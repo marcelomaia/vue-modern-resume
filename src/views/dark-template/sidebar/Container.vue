@@ -1,58 +1,62 @@
 <template>
-  <v-card
-    color="grey darken-3"
-    dark
-  >
+  <v-card color="grey darken-3" dark>
     <v-card-text>
       <avatar />
       <div class="text-sm-center mb-4 mt-3">
         <h1>
-          Amirreza <span class="light-blue--text text--lighten-3">Nasiri</span>
+          Marcelo <span class="light-blue--text text--lighten-3">Maia</span>
         </h1>
         <span>
-          A challenge-loving web developer
+          Fullstack Developer
         </span>
+        <div class="bandeiras-linguagem">
+          <button @click="setaPortugues">
+            <span
+              class="iconify"
+              data-icon="emojione-v1:flag-for-brazil"
+              data-inline="false"
+            />
+          </button>
+          <button @click="setaIngles">
+            <span
+              class="iconify"
+              data-icon="emojione-v1:flag-for-united-states"
+              data-inline="false"
+            />
+          </button>
+          <p>{{ $t("linguagem") }}</p>
+        </div>
       </div>
 
       <sidebar-section :options="sections.info" />
       <sidebar-section :options="sections.socials" />
       <sidebar-section :options="sections.hobbies">
-        <template v-slot:item="{item}">
+        <template v-slot:item="{ item }">
           <v-chip>
             <v-avatar>
               <v-icon>
                 {{ item.icon }}
               </v-icon>
             </v-avatar>
-            {{ item.text }}
+            {{ $t(item.text) }}
           </v-chip>
         </template>
       </sidebar-section>
       <sidebar-section :options="sections.languages">
-        <template v-slot:items="{items}">
+        <template v-slot:items="{ items }">
           <v-container pa-0>
-            <v-layout
-              wrap
-              class="text-xs-center"
-            >
-              <template
-                v-for="(item, i) in items"
-              >
-                <v-flex
-                  :key="i"
-                  md3
-                  sm4
-                  xs6
-                >
+            <v-layout wrap class="text-xs-center">
+              <template v-for="(item, i) in items">
+                <v-flex :key="i" md4 sm4 xs6>
                   <v-progress-circular
                     rotate="360"
-                    size="65"
+                    size="80"
                     width="2"
                     :value="item.value"
                     color="white"
                     class="ma-2"
                   >
-                    {{ item.text }}
+                    {{ $t(item.text) }}
                   </v-progress-circular>
                 </v-flex>
               </template>
@@ -65,143 +69,140 @@
 </template>
 
 <script>
-import Avatar from '@/views/dark-template/sidebar/Avatar'
-import SidebarSection from '@/views/dark-template/sidebar/Section'
+import Avatar from "@/views/dark-template/sidebar/Avatar";
+import SidebarSection from "@/views/dark-template/sidebar/Section";
 export default {
-  name      : 'Sidebar',
+  name: "Sidebar",
   components: { SidebarSection, Avatar },
-  data () {
+  methods: {
+    setaPortugues() {
+      this.$i18n.locale = "ptBr";
+    },
+    setaIngles() {
+      this.$i18n.locale = "en";
+    },
+  },
+  data() {
     return {
       sections: {
         info: {
-          title: 'INFO',
+          title: "INFO",
           items: [
             {
-              name: 'Email',
-              icon: 'mdi-email',
-              text: 'hi@amirreza.in',
+              name: "Email",
+              icon: "mdi-email",
+              text: "contato.email",
             },
             {
-              name: 'Website',
-              icon: 'mdi-web',
-              text: 'amirreza.in',
+              name: "Website",
+              icon: "mdi-web",
+              text: "marcelomaia.tech",
             },
             {
-              name: 'Birth Date',
-              icon: 'mdi-cake-variant',
-              text: 'Dec 7, 1996',
+              name: "Whatsapp",
+              icon: "mdi-whatsapp",
+              text: "+55 11 9 3431-5432",
             },
             {
-              name: 'Habitation',
-              icon: 'mdi-map-marker',
-              text: 'Tabriz, Iran',
+              name: "contato.habitacao",
+              icon: "mdi-map-marker",
+              text: "São Paulo, Brasil",
             },
           ],
         },
         socials: {
-          title: 'SOCIALS',
+          title: "SOCIAL",
           items: [
             {
-              icon: 'mdi-github-circle',
-              text: 'github.com/AmirrezaNasiri',
-              link: 'https://github.com/AmirrezaNasiri',
+              icon: "mdi-github-circle",
+              text: "github.com/marcelomaia",
+              link: "https://github.com/marcelomaia",
             },
             {
-              icon: 'mdi-linkedin-box',
-              text: 'linkedin.com/in/amirreza-nasiri',
-              link: 'https://linkedin.com/in/amirreza-nasiri',
+              icon: "mdi-linkedin-box",
+              text: "linkedin.com/in/marcelomaia2",
+              link: "https://linkedin.com/in/marcelomaia2",
             },
             {
-              icon: 'mdi-twitter',
-              text: 'twitter.com/Amirreza_Nasiri',
-              link: 'https://twitter.com/Amirreza_Nasiri',
+              icon: "mdi-instagram",
+              text: "instagram.com/marcelomaiaa2",
+              link: "https://instagram.com/marcelomaiaa2",
             },
             {
-              icon: 'mdi-instagram',
-              text: 'instagram.com/amirreza.n96',
-              link: 'https://instagram.com/amirreza.n96',
+              icon: "mdi-telegram",
+              text: "t.me/marcelomaiaa",
+              link: "https://t.me/marcelomaiaa",
             },
           ],
         },
         hobbies: {
-          title: 'HOBBIES',
+          title: "HOBBIES",
           items: [
-
             {
-              icon: 'mdi-bullseye',
-              text: 'Getting out of Safe Zone',
+              icon: "mdi-bullseye",
+              text: "hobbies.aprender",
             },
             {
-              icon: 'mdi-biohazard',
-              text: 'Challenges',
+              icon: "mdi-bike",
+              text: "hobbies.ciclismo",
             },
             {
-              icon: 'mdi-bike',
-              text: 'Cycling',
+              icon: "mdi-image-filter-hdr",
+              text: "hobbies.natureza",
             },
             {
-              icon: 'mdi-image-filter-hdr',
-              text: 'Nature',
+              icon: "mdi-teach",
+              text: "hobbies.ensinar",
             },
             {
-              icon: 'mdi-auto-fix',
-              text: 'Hacking Stuffs',
+              icon: "mdi-karate",
+              text: "hobbies.exercicios",
             },
             {
-              icon: 'mdi-teach',
-              text: 'Teaching',
+              icon: "mdi-music",
+              text: "hobbies.musica",
             },
             {
-              icon: 'mdi-karate',
-              text: 'Sports',
+              icon: "mdi-book-open-page-variant",
+              text: "hobbies.leitura",
             },
             {
-              icon: 'mdi-music',
-              text: 'Music',
-            },
-            {
-              icon: 'mdi-account-group',
-              text: 'Leadership',
-            },
-            {
-              icon: 'mdi-book-open-page-variant',
-              text: 'Books',
-            },
-            {
-              icon: 'mdi-android-debug-bridge',
-              text: 'Tickling Bugs!',
+              icon: "mdi-cookie",
+              text: "hobbies.cozinhar",
             },
           ],
         },
         languages: {
-          title: 'LANGUAGES',
+          title: "LÍNGUAS",
           items: [
             {
-              text : 'English',
-              value: 70,
+              text: "linguas.ingles",
+              value: 80,
             },
             {
-              text : 'Turkish',
-              value: 45,
-            },
-            {
-              text : 'Azeri',
-              value: 100,
-            },
-            {
-              text : 'Persian',
+              text: "linguas.portugues",
               value: 100,
             },
           ],
         },
       },
-    }
+    };
   },
-}
+};
 </script>
 
-<style scoped>
-.sidebar{
-    background: #2e2e2e;
+<style lang="scss" scoped>
+.sidebar {
+  background: #2e2e2e;
+}
+.bandeiras-linguagem {
+  $tam: 3.5em;
+  .iconify {
+    width: $tam;
+    height: $tam/1.5;
+    // :hover {
+    //   cursor: pointer;
+    // }
+  }
 }
 </style>

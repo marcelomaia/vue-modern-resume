@@ -1,60 +1,21 @@
 <template>
-  <v-card
-    color="grey lighten-4"
-    light
-  >
+  <v-card color="grey lighten-4" light>
     <v-card-text>
-      <content-section
-        title="Who am I?"
-      >
-        I'm a developer born in Iran and founder of <a href="http://delix.ir/?utm_source=portiflo&utm_medium=link&utm_content=intro&utm_campaign=delix">Delix.ir</a>, <a href="https://bytegate.ir/?utm_source=portiflo&utm_medium=link&utm_content=intro&utm_campaign=bytegate">Bytegate.ir</a> and <a href="http://bobet.ir/?utm_source=portiflo&utm_medium=link&utm_content=intro&utm_campaign=bobet">Bobet.ir</a> and co-founder of <a href="https://smo.li/?utm_source=portiflo&utm_medium=link&utm_content=intro&utm_campaign=smoli">Smo.li</a>.<br>
-        I'm interested and skilled in different topics of Information Technology including programming, web development, and computer and network security.
+      <content-section :title="$t('principal.titulo')">
+        {{ $t("principal.descricao") }}
       </content-section>
-      <content-section
-        v-if="prouds"
-        title="What am I proud of?"
-      >
-        <v-layout
-          v-for="(proud, i) in prouds"
-          :key="i"
-        >
-          <v-flex
-            md1
-            xs3
-          >
-            <v-icon right>
-              {{ proud.icon }}
-            </v-icon>
-          </v-flex>
-          <v-flex
-            md11
-            xs9
-          >
-            <p>
-              <strong>{{ proud.text }}</strong><br>
-              <small>{{ proud.source }}</small>
-            </p>
-          </v-flex>
-        </v-layout>
-      </content-section>
-      <content-section
-        v-if="educations"
-        title="Education"
-      >
-        <v-layout
-          v-for="(education, i) in educations"
-          :key="i"
-        >
+      <content-section v-if="educations" :title="$t('educacao.titulo')">
+        <v-layout v-for="(education, i) in educations" :key="i">
           <v-flex md4>
-            {{ education.from }} - {{ education.to }}
+            {{ $t(education.from) }} - {{ $t(education.to) }}
           </v-flex>
           <v-flex md8>
-            <strong v-if="education.title">{{ education.title }}</strong>
+            <strong v-if="education.title">{{ $t(education.title) }}</strong>
             <div v-if="education.location">
-              <i>{{ education.location }}</i>
+              <i>{{ $t(education.location) }}</i>
             </div>
             <div v-if="education.description">
-              {{ education.description }}
+              {{ $t(education.description) }}
             </div>
           </v-flex>
         </v-layout>
@@ -62,35 +23,19 @@
       <content-section
         v-if="skills"
         id="to-timeline"
-        title="Skills"
+        :title="$t('habilidades.titulo')"
       >
-        <template slot="actions">
-          (% are relative not absolute)
-        </template>
         <v-layout wrap>
-          <template
-            v-for="(skill, i) in skills"
-          >
-            <v-flex
-              v-if="skill.divider"
-              :key="i"
-              md12
-              xs12
-              mb-4
-            />
-            <v-flex
-              v-else
-              :key="i"
-              md6
-              xs12
-            >
-              <div
-                class="mr-2 ml-2"
-              >
-                <div class="align-center">
-                  <v-icon
-                    small
-                  >
+          <template v-for="(skill, i) in skills">
+            <v-flex v-if="skill.divider" :key="i" md12 xs12 mb-4 />
+            <v-flex v-else :key="i" md6 xs12>
+              <div class="mr-2 ml-2">
+                <div v-if="skill.custom" class="align-center">
+                  <span class="iconify" :data-icon="skill.icon" />
+                  {{ skill.title }}
+                </div>
+                <div v-else class="align-center">
+                  <v-icon small>
                     {{ skill.icon }}
                   </v-icon>
                   {{ skill.title }}
@@ -111,119 +56,186 @@
 </template>
 
 <script>
-import ContentSection from '@/views/dark-template/content/Section'
+import ContentSection from "@/views/dark-template/content/Section";
 export default {
-  name      : 'MainContent',
+  name: "MainContent",
   components: { ContentSection },
-  data      : () => ({
-    prouds: [
-      {
-        icon  : 'mdi-help-rhombus-outline',
-        text  : 'Answered 10M+ questions!',
-        source: '(Bytegate.ir post views)',
-      },
-      {
-        icon  : 'mdi-library-music',
-        text  : 'Made people enjoy and learn a new language for equivalent of 29+ years (older than myself!)',
-        source: '(Bobet.ir and its channel downloads)',
-      },
-      {
-        icon  : 'mdi-timer-sand',
-        text  : 'Saved +110 days of time of students, writers and etc!',
-        source: '(Delix.ir service usages)',
-      },
-      {
-        icon  : 'mdi-account-multiple',
-        text  : 'Tried to cover small part of 7 people expenses.',
-        source: '(My awesome colleagues)',
-      },
-    ],
+  mounted(){
+    this.$i18n.locale = 'ptBr'
+  },
+  data: () => ({
     educations: [
       {
-        from       : '2015',
-        to         : '2019 (not finished yet)',
-        title      : 'Bachelor\'s degree, Information Technology',
-        location   : 'Seraj University',
-        description: 'Became a member of University Academic Association of Computer Science',
+        from: "educacao.1.inicio",
+        to: "educacao.1.fim",
+        title: "educacao.1.titulo",
+        location: "educacao.1.lugar",
+        description: "educacao.1.descricao",
+      },
+      {
+        from: "educacao.2.inicio",
+        to: "educacao.2.fim",
+        title: "educacao.2.titulo",
+        location: "educacao.2.lugar",
+        description: "educacao.2.descricao",
       },
     ],
     skills: [
       {
-        title: 'PHP',
-        icon : 'mdi-language-php',
+        title: "Python",
+        icon: "mdi-language-python",
         value: 95,
       },
       {
-        title: 'JavaScript',
-        icon : 'mdi-language-javascript',
-        value: 80,
-      },
-      {
-        title: 'Laravel Framework',
-        icon : 'mdi-laravel',
+        title: "JavaScript",
+        icon: "mdi-language-javascript",
         value: 90,
       },
       {
-        title: 'Vue.js Framework',
-        icon : 'mdi-vuejs',
-        value: 90,
-      },
-      { divider: true },
-      {
-        title: 'Ubuntu Server',
-        icon : 'mdi-ubuntu',
+        title: "DART",
+        icon: "simple-icons:dart",
+        custom: true,
         value: 70,
       },
       {
-        title: 'CentOS Server',
-        icon : 'mdi-linux',
-        value: 47,
+        title: "Flutter",
+        icon: "cib:flutter",
+        custom: true,
+        value: 60,
       },
       {
-        title: 'Web Application Security',
-        icon : 'mdi-shield-lock',
+        title: "Django",
+        icon: "cib:django",
+        custom: true,
+        value: 95,
+      },
+      {
+        title: "Django Rest Framework",
+        icon: "cib:django",
+        custom: true,
+        value: 95,
+      },
+      {
+        title: "Flask",
+        icon: "cib:flask",
+        value: 90,
+        custom: true,
+      },
+      {
+        title: "Pytest",
+        icon: "mdi-test-tube",
+        custom: true,
+        value: 95,
+      },
+
+      {
+        title: "Jest",
+        icon: "cib:jest",
+        custom: true,
         value: 80,
       },
       {
-        title: 'Test Driven Development',
-        icon : 'mdi-test-tube',
-        value: 26,
+        title: "Vue.js",
+        icon: "mdi-vuejs",
+        value: 90,
       },
       {
-        title: 'Continuous Integration / Continuous Delivery',
-        icon : 'mdi-truck-fast',
-        value: 35,
+        title: "React.js",
+        icon: "mdi-react",
+        value: 80,
+      },
+
+      {
+        title: "Material Design",
+        icon: "simple-icons:material-ui",
+        value: 90,
+        custom: true,
       },
       {
-        title: 'Git',
-        icon : 'mdi-git',
-        value: 67,
-      },
-      { divider: true },
-      {
-        title: 'Hardware Development',
-        icon : 'mdi-chip',
-        value: 29,
+        title: "Bootstrap 4",
+        icon: "mdi-bootstrap",
+        value: 90,
       },
       {
-        title: 'C/C++',
-        icon : 'mdi-language-cpp',
-        value: 38,
-      },
-      { divider: true },
-      {
-        title: 'Leadership',
-        icon : 'mdi-account-group',
-        value: 68,
+        title: "HTML",
+        icon: "mdi-language-html5",
+        value: 100,
       },
       {
-        title: 'Content Marketing (+340 articles)',
-        icon : 'mdi-text',
-        value: 96,
+        title: "CSS",
+        icon: "mdi-language-css3",
+        value: 88,
+      },
+
+      {
+        title: "Postgres",
+        icon: "cib:postgresql",
+        custom: true,
+        value: 90,
+      },
+      {
+        title: "MongoDB",
+        icon: "cib:mongodb",
+        custom: true,
+        value: 80,
+      },
+      {
+        title: "Redis",
+        icon: "cib:redis",
+        custom: true,
+        value: 90,
+      },
+      {
+        title: "Nginx",
+        icon: "cib:nginx",
+        custom: true,
+        value: 60,
+      },
+      {
+        title: "Linux",
+        icon: "mdi-linux",
+        value: 95,
+      },
+      {
+        title: "Docker",
+        icon: "mdi-docker",
+        value: 95,
+      },
+      {
+        title: "Extreme Programming",
+        icon: "cryptocurrency:xp",
+        value: 90,
+        custom: true,
+      },
+      {
+        title: "Domain Driven Design",
+        icon: "whh:business",
+        value: 90,
+        custom: true,
+      },
+      {
+        title: "Web Application Security",
+        icon: "mdi-shield-lock",
+        value: 80,
+      },
+      {
+        title: "Test Driven Development",
+        icon: "mdi-test-tube",
+        value: 95,
+      },
+      {
+        title: "Continuous Integration / Continuous Delivery",
+        icon: "mdi-truck-fast",
+        value: 90,
+      },
+      {
+        title: "Git",
+        icon: "mdi-git",
+        value: 90,
       },
     ],
   }),
-}
+};
 </script>
 
 <style scoped>
@@ -233,5 +245,8 @@ export default {
 }
 .progress {
   margin-top: 0.1rem;
+}
+.iconify {
+  color: #777777;
 }
 </style>
