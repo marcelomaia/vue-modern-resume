@@ -24,6 +24,7 @@
               data-inline="false"
             />
           </button>
+          <p>{{ $t("linguagem") }}</p>
         </div>
       </div>
 
@@ -75,10 +76,10 @@ export default {
   components: { SidebarSection, Avatar },
   methods: {
     setaPortugues() {
-      this.$i18n.locale = 'ptBr'
+      this.$i18n.locale = "ptBr";
     },
     setaIngles() {
-      this.$i18n.locale = 'en'
+      this.$i18n.locale = "en";
     },
   },
   data() {

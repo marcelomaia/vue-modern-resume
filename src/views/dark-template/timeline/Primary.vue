@@ -3,17 +3,7 @@
     <v-card-text>
       <content-section
         id="timeline"
-        :title="detailed ? 'My Life in a Nutshell' : 'My Experiences'"
       >
-        <template slot="actions">
-          <div>
-            <v-switch
-              v-model="detailed"
-              :label="detailed ? 'Detailed' : 'Summary'"
-            />
-          </div>
-        </template>
-
         <v-timeline dense>
           <v-timeline-item
             v-for="(item, i) in orderedItems"

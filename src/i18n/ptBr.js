@@ -124,6 +124,7 @@ const messages = {
         </div>`,
     },
   },
+  linguagem: 'Escolha seu idioma'
 };
 
 export default messages;
