@@ -46,10 +46,10 @@
           <v-container pa-0>
             <v-layout wrap class="text-xs-center">
               <template v-for="(item, i) in items">
-                <v-flex :key="i" md3 sm4 xs6>
+                <v-flex :key="i" md4 sm4 xs6>
                   <v-progress-circular
                     rotate="360"
-                    size="70"
+                    size="80"
                     width="2"
                     :value="item.value"
                     color="white"

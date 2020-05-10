@@ -69,7 +69,7 @@ export default {
       {
         size      : 2,
         color     : this.$vuetify.theme.primary,
-        startLabel: LeaderLine.captionLabel('To the Journey ...'),
+        startLabel: LeaderLine.captionLabel(this.$t('rodape.frase')),
       }
     )
   },
