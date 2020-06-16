@@ -14,7 +14,7 @@ const messages = {
     ensinar: "teach",
   },
   principal: {
-    titulo: "Who am I",
+    titulo: "Who am I?",
     descricao:
       "Experienced developer with nine years of experience in IT, great analytical skills and business vision. Diversified knowledge in Backend, Frontend and DevOps. Always worked in contact with customers and has an excellent ability to work collaboratively.",
   },
@@ -96,13 +96,13 @@ const messages = {
         <p><strong>Main technologies used:</strong></p>
         <ul>
         <li>Python, Django, Django REST Framework, Pytest, Weasyprint.</li>
-        <li>ReactJS, Redux, Redux-Form, Jest, Enzyme, Bootstrap4, SASS, HTML, CSS e JS.</li>
+        <li>ReactJS, Redux, Redux-Form, Jest, Enzyme, Bootstrap4, SASS, HTML, CSS and JS.</li>
         <li>Postgres, Redis, MongoDB.</li>
         <li>Docker, Sentry, NGNINX, Travis-CI.</li>
         </ul>`
     },
     6: {
-      ano: "Até agora...",
+      ano: "So far...",
       titulo: "New challenge at TIVIT.",
       html:
         `
@@ -111,7 +111,7 @@ const messages = {
         <div><strong>Main technologies used:</strong>
         <ul>
         <li>Python, Django, Django REST Framework, Pytest.</li>
-        <li>VueJS, Cypress, Cucumber e BDD.</li>
+        <li>VueJS, Cypress, Cucumber and BDD.</li>
         <li>Flutter</li>
         <li>Postgres, Redis, MongoDB.</li>
         <li>Docker, Sentry, NGNINX, Gitlab-CI.</li>

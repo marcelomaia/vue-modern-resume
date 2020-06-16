@@ -1,9 +1,7 @@
 <template>
   <v-card color="grey lighten-4" light>
     <v-card-text>
-      <content-section
-        id="timeline"
-      >
+      <content-section id="timeline">
         <v-timeline dense>
           <v-timeline-item
             v-for="(item, i) in orderedItems"
@@ -95,7 +93,7 @@ export default {
         year: "experiencia.1.ano",
         title: "experiencia.1.titulo",
         html: "experiencia.1.html",
-        image: "img/timeline/boto-set.jpg",
+        image: "img/timeline/noticia.png",
         icon: "mdi-linux",
       },
       {
@@ -115,19 +113,21 @@ export default {
         year: "experiencia.4.ano",
         title: "experiencia.4.titulo",
         html: "experiencia.4.html",
-        image: "img/timeline/ebi.jpg",
+        image: "img/timeline/palestra-chatbots.jpg",
         icon: "mdi-office-building",
       },
       {
         year: "experiencia.5.ano",
         title: "experiencia.5.titulo",
         html: "experiencia.5.html",
+        image: "img/timeline/testes.png",
         icon: "mdi-airport",
       },
       {
         year: "experiencia.6.ano",
         title: "experiencia.6.titulo",
         html: "experiencia.6.html",
+        image: "img/timeline/canhoto-digital.png",
         icon: "mdi-factory",
       },
     ],
